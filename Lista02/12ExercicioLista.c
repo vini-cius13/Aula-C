@@ -1,23 +1,24 @@
 #include <stdio.h>
 
-int teste(int n);
+int fibo(int n);
 int n;
 
 int main() {
     
-    printf("Enter the value of n: ");
+    printf("Digite a posição desejada: ");
     scanf("%d", &n);
     
-    printf("Fibonacci(%d) = %d\n", n, teste(n));
+    printf("Fibonacci(%d) = %d\n", n, fibo(n));
     
     return 0;
 }
-int teste(int n) {
-    if (n <= 0)
+int fibo(int n) {
+    if(n <= 0){
         return 0;
-    else if (n == 1)
+    }
+    else if (n == 1){
         return 1;
-    
+    }
     int prev = 0;
     int current = 1;
     int next;
@@ -27,6 +28,5 @@ int teste(int n) {
         prev = current;
         current = next;
     }
-    
     return current;
 }
